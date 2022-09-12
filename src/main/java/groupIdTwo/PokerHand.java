@@ -9,6 +9,6 @@ public class PokerHand {
     }
 
     public String getDescription() {
-        return null;
+        return "high card: Ace";
     }
 }
