@@ -30,8 +30,6 @@ public class PokerHand {
 
         }
 
-
-
         for(Card s : this.cards){
             if(!cardsWithSameRank.containsKey(s.getRank())){
                 cardsWithSameRank.put(s.getRank(), new ArrayList<>());
@@ -40,6 +38,11 @@ public class PokerHand {
             cardsWithSameRank.get(s.getRank()).add(s);
         }
         for(Rank r : cardsWithSameRank.keySet()){
+            for(Rank e : cardsWithSameRank.keySet()){
+                if(cardsWithSameRank.get(r).size() == 3 && cardsWithSameRank.get(e).size() == 2){
+                    return  "full house";
+                }
+            }
             if(cardsWithSameRank.get(r).size() == 4){
                 return  "four of a kind";
             }

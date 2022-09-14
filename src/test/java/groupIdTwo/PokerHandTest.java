@@ -61,9 +61,9 @@ public class PokerHandTest {
         var pokerHand = new PokerHand(new Card[] {
                 new Card(Rank.Number_2, Suit.Hearts),
                 new Card(Rank.Number_2, Suit.Spades),
-                new Card(Rank.Ace, Suit.Diamonds),
+                new Card(Rank.Number_2, Suit.Diamonds),
                 new Card(Rank.Number_2, Suit.Clubs),
-                new Card(Rank.Number_2, Suit.Hearts),
+                new Card(Rank.Ace, Suit.Hearts),
         });
 
         assertEquals(pokerHand.getDescription(), "four of a kind");
