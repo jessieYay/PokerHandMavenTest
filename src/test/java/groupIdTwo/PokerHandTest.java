@@ -61,12 +61,28 @@ public class PokerHandTest {
         var pokerHand = new PokerHand(new Card[] {
                 new Card(Rank.Number_2, Suit.Hearts),
                 new Card(Rank.Number_2, Suit.Spades),
-                new Card(Rank.Ace, Suit.Diamonds),
+                new Card(Rank.Number_2, Suit.Diamonds),
                 new Card(Rank.Number_2, Suit.Clubs),
-                new Card(Rank.Number_2, Suit.Hearts),
+                new Card(Rank.Ace, Suit.Hearts),
         });
 
         assertEquals(pokerHand.getDescription(), "four of a kind");
+
+    }
+
+    @Test
+
+    void shouldScoreFlush(){
+
+        var pokerHand = new PokerHand(new Card[] {
+                new Card(Rank.Number_2, Suit.Hearts),
+                new Card(Rank.Number_6, Suit.Hearts),
+                new Card(Rank.Ace, Suit.Hearts),
+                new Card(Rank.Number_3, Suit.Hearts),
+                new Card(Rank.Number_4, Suit.Hearts),
+        });
+
+        assertEquals(pokerHand.getDescription(), "Flush");
 
     }
 }

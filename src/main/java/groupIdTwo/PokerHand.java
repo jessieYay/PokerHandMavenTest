@@ -17,7 +17,18 @@ public class PokerHand {
         HashMap<Suit, ArrayList<Card>> cardsWithSameSuit = new HashMap<>();
         HashMap<Rank, ArrayList<Card>> cardsWithSameRank = new HashMap<>();
 
+        for(Card f : this.cards ){
+            if(!cardsWithSameSuit.containsKey(f.getSuit())){
+                cardsWithSameSuit.put(f.getSuit(),new ArrayList<>());
+            }
+            cardsWithSameSuit.get(f.getSuit()).add(f);
+        }
+        for(Suit su : cardsWithSameSuit.keySet()){
+            if(cardsWithSameSuit.get(su).size() == 5){
+                return "Flush";
+            }
 
+        }
 
         for(Card s : this.cards){
             if(!cardsWithSameRank.containsKey(s.getRank())){
@@ -27,6 +38,11 @@ public class PokerHand {
             cardsWithSameRank.get(s.getRank()).add(s);
         }
         for(Rank r : cardsWithSameRank.keySet()){
+            for(Rank e : cardsWithSameRank.keySet()){
+                if(cardsWithSameRank.get(r).size() == 3 && cardsWithSameRank.get(e).size() == 2){
+                    return  "full house";
+                }
+            }
             if(cardsWithSameRank.get(r).size() == 4){
                 return  "four of a kind";
             }
@@ -49,4 +65,5 @@ public class PokerHand {
         }
         return "high card: " + MaxRank.getDescription();
     }
+
 }
