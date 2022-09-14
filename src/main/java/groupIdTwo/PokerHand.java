@@ -28,10 +28,10 @@ public class PokerHand {
         }
         for(Rank r : cardsWithSameRank.keySet()){
             if(cardsWithSameRank.get(r).size() == 4){
-                return  "Four of a kind of type: " + r.getDescription();
+                return  "Four of a kind of type";
             }
             else if(cardsWithSameRank.get(r).size() == 3){
-                return "3 of a kind of type: " + r.getDescription();
+                return "three of a kind";
             }
             else if(cardsWithSameRank.get(r).size() == 2){
                 return "pair of: " + r.getDescription();
