@@ -28,7 +28,7 @@ public class PokerHand {
         }
         for(Rank r : cardsWithSameRank.keySet()){
             if(cardsWithSameRank.get(r).size() == 4){
-                return  "Four of a kind of type";
+                return  "four of a kind";
             }
             else if(cardsWithSameRank.get(r).size() == 3){
                 return "three of a kind";
