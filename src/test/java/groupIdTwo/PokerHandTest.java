@@ -85,4 +85,20 @@ public class PokerHandTest {
         assertEquals(pokerHand.getDescription(), "Flush");
 
     }
+
+    @Test
+
+    void shouldScoreFullHouse(){
+
+        var pokerHand = new PokerHand(new Card[] {
+                new Card(Rank.Number_2, Suit.Hearts),
+                new Card(Rank.Number_6, Suit.Hearts),
+                new Card(Rank.Ace, Suit.Hearts),
+                new Card(Rank.Number_3, Suit.Hearts),
+                new Card(Rank.Number_4, Suit.Hearts),
+        });
+
+        assertEquals(pokerHand.getDescription(), "Flush");
+
+    }
 }
