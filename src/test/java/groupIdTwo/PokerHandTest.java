@@ -63,7 +63,7 @@ public class PokerHandTest {
                 new Card(Rank.Number_2, Suit.Spades),
                 new Card(Rank.Ace, Suit.Diamonds),
                 new Card(Rank.Number_2, Suit.Clubs),
-                new Card(Rank.Number_7, Suit.Hearts),
+                new Card(Rank.Number_2, Suit.Hearts),
         });
 
         assertEquals(pokerHand.getDescription(), "four of a kind");
