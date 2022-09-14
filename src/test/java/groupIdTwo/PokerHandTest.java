@@ -21,4 +21,20 @@ public class PokerHandTest {
         assertEquals(pokerHand.getDescription(), "high card: Ace");
 
     }
+
+    @Test
+
+    void shouldScorePair(){
+
+        var pokerHand = new PokerHand(new Card[] {
+                new Card(Rank.Number_2, Suit.Hearts),
+                new Card(Rank.Number_2, Suit.Spades),
+                new Card(Rank.Ace, Suit.Diamonds),
+                new Card(Rank.Number_3, Suit.Clubs),
+                new Card(Rank.Number_7, Suit.Hearts),
+        });
+
+        assertEquals(pokerHand.getDescription(), "pair of: 2");
+
+    }
 }
